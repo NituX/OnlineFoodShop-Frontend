@@ -1,0 +1,31 @@
+{
+    "items": [
+    {
+        "itemId" : "1",
+        "itemName": "Porilainen",
+        "category": "burger",
+        "price" : "12",
+        "description" : "Hamppari makkarapihvillä",
+        "image" : "",
+        "rating" : "8"
+    },
+    {
+        "itemId" : "2",
+        "itemName": "Hawaii",
+        "category": "pizza",
+        "price" : "11",
+        "description" : "Hyvä pitsa",
+        "image" : "",
+        "rating" : "5"
+    },
+    {
+        "itemId" : "3",
+        "itemName": "Coca-cola",
+        "category": "drink",
+        "price" : "3",
+        "description" : "Perus kokis",
+        "image" : "",
+        "rating" : "10"
+    }
+]
+}

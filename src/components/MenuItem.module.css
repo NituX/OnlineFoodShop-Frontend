@@ -1,0 +1,42 @@
+.container {
+    text-align: left;
+    height: 100px;
+    width: 500px;
+    border: 1px solid var(--clr-primary);
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.container dt {
+    color: var(--clr-secondary);
+    font-weight: bold;
+}
+
+.container dd {
+    font-weight: 500;
+    font-style: italic;
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.itemPrice {
+    height: 50px;
+    line-height: 50px;
+    color: var(--clr-ora);
+    font-weight: bold;
+    font-size: 18px;
+    float: right;
+    margin-right: 20px;
+}
+
+.container button {
+    float: right;
+    height: 50px;
+}
+
+.image {
+    background-color: green;
+    float: left;
+    width: 100px;
+    height: 100px;
+}

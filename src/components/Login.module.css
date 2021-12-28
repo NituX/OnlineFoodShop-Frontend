@@ -1,4 +1,5 @@
 .container {
+    display: flex;
     width: 300px;
     
     margin: 20px;
@@ -34,7 +35,7 @@
     margin-right: auto;
 }
 
-button {
+.container button {
     width: 130px;
     height: 40px;
     border-radius: 10px;
