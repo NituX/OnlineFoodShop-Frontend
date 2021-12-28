@@ -1,0 +1,47 @@
+.container {
+    width: 300px;
+    
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 1px solid var(--clr-primary);
+    border-radius: 10px;
+    background-color: rgb(250, 250, 250);
+}
+
+.container body{
+    font-weight: bold;
+    color: var(--clr-secondary);
+    font-size: 30px;
+}
+
+.inputfield {
+    display:flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.inputfield body {
+    text-align:left;
+    margin-left: auto;
+    width: 80px;
+    font-size: 16px;
+}
+
+.inputfield input{
+    width: 200px;
+    margin-right: auto;
+}
+
+button {
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 5px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    color: var(--clr-secondary);
+}
