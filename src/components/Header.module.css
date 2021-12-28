@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-primary);
+}
+
+.logo {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.navmenu {
+    display: flex;
+    margin-left: auto;
+}
+
+.navmenu body {
+    border: 1px solid red;
+    margin: 10px;
+    color: white;
+}
