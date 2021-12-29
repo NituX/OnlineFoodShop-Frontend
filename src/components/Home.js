@@ -1,12 +1,18 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import styles from './Home.module.css';
+import {Link} from 'react-router-dom';
+import RestaurantButton from './RestaurantButton';
 
-export default function () {
+export default function (props) {
     return (
-        <div>
-            <Link to="restaurant">
+        <div className={styles.container}>
+                {
+                props.items.map(item => <RestaurantButton key={item.id} {...item} />)
+                }
+
+            {/*<Link to="restaurant">
                 <button> Restaurant </button>
-            </Link>
+    </Link>*/}
         </div>
     )
 }

@@ -1,0 +1,226 @@
+{
+    "items":[
+        {
+        "id" : "1",
+        "restaurantName" : "Kallen Kebab",
+        "description" : "Kebabbia kallelta jo vuodesta 2021",
+        "opening hour" : "hh:mm",
+        "closing hour" : "hh:mm",
+        "image" : "kallenkebab.jpeg",
+        "rating" : "9",
+        "email" : "kebabkalle@lkajsd.com",
+        "phone" : "056845489321",
+        "address" : "Siipitie 13",
+        "city" : "Oulu",
+        "postal" : "29340",
+        "password" : "cryptedpasswd",
+        "menu" : [
+            {
+                "itemId" : "1",
+                "itemName": "sdfg",
+                "category": "burger",
+                "price" : "12",
+                "description" : "Hamppari makkarapihvillä",
+                "image" : "",
+                "rating" : "8"
+            },
+            {
+                "itemId" : "2",
+                "itemName": "Hawadfgii",
+                "category": "pizza",
+                "price" : "11",
+                "description" : "Hyvä pitsa",
+                "image" : "",
+                "rating" : "5"
+            },
+            {
+                "itemId" : "3",
+                "itemName": "sprite",
+                "category": "drink",
+                "price" : "3",
+                "description" : "Perus kokis",
+                "image" : "",
+                "rating" : "10"
+            }
+        ]
+        },
+
+        {
+            "id" : "2",
+            "restaurantName" : "Keijon Kebab",
+            "description" : "Kebabbia kallelta jo vuodesta 2021",
+            "opening hour" : "hh:mm",
+            "closing hour" : "hh:mm",
+            "image" : "kallenkebab.jpeg",
+            "rating" : "9",
+            "email" : "kebabkalle@lkajsd.com",
+            "phone" : "056845489321",
+            "address" : "Siipitie 13",
+            "city" : "Oulu",
+            "postal" : "29340",
+            "password" : "cryptedpasswd",
+            "menu" : [
+                {
+                    "itemId" : "1",
+                    "itemName": "Porilainen",
+                    "category": "burger",
+                    "price" : "12",
+                    "description" : "Hamppari makkarapihvillä",
+                    "image" : "",
+                    "rating" : "8"
+                },
+                {
+                    "itemId" : "2",
+                    "itemName": "Hawaii",
+                    "category": "pizza",
+                    "price" : "11",
+                    "description" : "Hyvä pitsa",
+                    "image" : "",
+                    "rating" : "5"
+                },
+                {
+                    "itemId" : "3",
+                    "itemName": "Coca-cola",
+                    "category": "drink",
+                    "price" : "3",
+                    "description" : "Perus kokis",
+                    "image" : "",
+                    "rating" : "10"
+                }
+            ]
+            },
+
+            {
+                "id" : "3",
+                "restaurantName" : "Karrin Kebab",
+                "description" : "Kebabbia kallelta jo vuodesta 2021",
+                "opening hour" : "hh:mm",
+                "closing hour" : "hh:mm",
+                "image" : "kallenkebab.jpeg",
+                "rating" : "9",
+                "email" : "kebabkalle@lkajsd.com",
+                "phone" : "056845489321",
+                "address" : "Siipitie 13",
+                "city" : "Oulu",
+                "postal" : "29340",
+                "password" : "cryptedpasswd",
+                "menu" : [
+                    {
+                        "itemId" : "1",
+                        "itemName": "Porilainen",
+                        "category": "burger",
+                        "price" : "12",
+                        "description" : "Hamppari makkarapihvillä",
+                        "image" : "",
+                        "rating" : "8"
+                    },
+                    {
+                        "itemId" : "2",
+                        "itemName": "Hawaii",
+                        "category": "pizza",
+                        "price" : "11",
+                        "description" : "Hyvä pitsa",
+                        "image" : "",
+                        "rating" : "5"
+                    },
+                    {
+                        "itemId" : "3",
+                        "itemName": "Coca-cola",
+                        "category": "drink",
+                        "price" : "3",
+                        "description" : "Perus kokis",
+                        "image" : "",
+                        "rating" : "10"
+                    }
+                ]
+                },
+                {
+                    "id" : "4",
+                    "restaurantName" : "Karrin Kebab",
+                    "description" : "Kebabbia kallelta jo vuodesta 2021",
+                    "opening hour" : "hh:mm",
+                    "closing hour" : "hh:mm",
+                    "image" : "kallenkebab.jpeg",
+                    "rating" : "9",
+                    "email" : "kebabkalle@lkajsd.com",
+                    "phone" : "056845489321",
+                    "address" : "Siipitie 13",
+                    "city" : "Oulu",
+                    "postal" : "29340",
+                    "password" : "cryptedpasswd",
+                    "menu" : [
+                        {
+                            "itemId" : "1",
+                            "itemName": "Porilainen",
+                            "category": "burger",
+                            "price" : "12",
+                            "description" : "Hamppari makkarapihvillä",
+                            "image" : "",
+                            "rating" : "8"
+                        },
+                        {
+                            "itemId" : "2",
+                            "itemName": "Hawaii",
+                            "category": "pizza",
+                            "price" : "11",
+                            "description" : "Hyvä pitsa",
+                            "image" : "",
+                            "rating" : "5"
+                        },
+                        {
+                            "itemId" : "3",
+                            "itemName": "Coca-cola",
+                            "category": "drink",
+                            "price" : "3",
+                            "description" : "Perus kokis",
+                            "image" : "",
+                            "rating" : "10"
+                        }
+                    ]
+                    },
+                    {
+                        "id" : "5",
+                        "restaurantName" : "Karrin Kebab",
+                        "description" : "Kebabbia kallelta jo vuodesta 2021",
+                        "opening hour" : "hh:mm",
+                        "closing hour" : "hh:mm",
+                        "image" : "kallenkebab.jpeg",
+                        "rating" : "9",
+                        "email" : "kebabkalle@lkajsd.com",
+                        "phone" : "056845489321",
+                        "address" : "Siipitie 13",
+                        "city" : "Oulu",
+                        "postal" : "29340",
+                        "password" : "cryptedpasswd",
+                        "menu" : [
+                            {
+                                "itemId" : "1",
+                                "itemName": "Porilainen",
+                                "category": "burger",
+                                "price" : "12",
+                                "description" : "Hamppari makkarapihvillä",
+                                "image" : "",
+                                "rating" : "8"
+                            },
+                            {
+                                "itemId" : "2",
+                                "itemName": "Hawaii",
+                                "category": "pizza",
+                                "price" : "11",
+                                "description" : "Hyvä pitsa",
+                                "image" : "",
+                                "rating" : "5"
+                            },
+                            {
+                                "itemId" : "3",
+                                "itemName": "Coca-cola",
+                                "category": "drink",
+                                "price" : "3",
+                                "description" : "Perus kokis",
+                                "image" : "",
+                                "rating" : "10"
+                            }
+                        ]
+                        }
+    ]
+}

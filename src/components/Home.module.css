@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    width: 80%;
+    background-color: var(--clr-backgr);
+    margin-right: auto; 
+    margin-left: auto;
+    margin-top: 100px;
+}
+
+.container button{
+    width: 300px;
+    height: 200px;
+
+    border: 2px solid var(--clr-primary);
+    border-radius: 35px;
+    border-color: var(--clr-secondary);
+
+}

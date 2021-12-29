@@ -35,7 +35,7 @@ export default function Login() {
 
                 <label> Password:
                     <input
-                        type="text"
+                        type="password"
                         name="password"
                         value={inputs.password || ""}
                         onChange={handleChange}

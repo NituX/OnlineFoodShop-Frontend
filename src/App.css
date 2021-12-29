@@ -16,3 +16,20 @@
 .App-link {
     color: #61dafb;
 }
+
+.App button {
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 5px;
+    border-color: var(--clr-secondary);
+
+    font-size: 14px;
+    font-weight: bold;
+    background-color: var(--clr-primaryexlight);
+    color: var(--clr-primary2);
+}
+
+.App button:hover {
+    background-color: var(--clr-primarylight);
+}
