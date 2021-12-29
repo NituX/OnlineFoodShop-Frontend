@@ -9,7 +9,7 @@
 
 .App h2 {
     font-family: var(--ff-logo);
-    color: var(--clr-secondary);
+    color: var(--clr-primary2);
     font-size: 36px;
     font-weight: bold;
 }

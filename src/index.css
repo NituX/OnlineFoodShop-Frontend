@@ -2,7 +2,14 @@
     --ff-body: "PT Sans Narrow", sans-serif;
     --ff-logo: "Shizuru", cursive;
     --clr-primary: #264653;
+    --clr-primary2: #45606B;
     --clr-secondary: #2A9D8F;
+
+    --clr-primarylight: #A2AFB5;
+    --clr-primaryexlight: #C1CACD ;
+
+    --clr-backgr: #E0E4E6;
+
     --clr-yell: #E9C46A;
     --clr-ora: #F4A261;
     --clr-red: #E76F51;

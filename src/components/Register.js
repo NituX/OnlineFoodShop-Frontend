@@ -1,34 +1,73 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './Login.module.css';
 
 export default function Login() {
+
+    const [inputs, setInputs] = useState({});
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({ ...values, [name]: value }))
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(inputs);
+    }
+
+
     return (
         <div className= {styles.container}>
-            <body>
+            <h2>
                 Create Account
-            </body>
+            </h2>
 
-            <div className= {styles.inputfield}>
-                <body>Name</body>
-                <input type='text'/>
-            </div>
+            <form onSubmit={handleSubmit} className= {styles.inputfield}>
+                <label>Name:
+                <input
+                 type="text"
+                 name="cname"
+                 value={inputs.cname || ""}
+                 onChange={handleChange}                 
+                 />
+                </label>
 
-            <div className= {styles.inputfield}>
-                <body>Email</body>
-                <input type='text'/>
-            </div>
+                <label>Email:
+                <input
+                type="email"
+                name="email"
+                value={inputs.email || ""}
+                onChange={handleChange}   
+                />
+                </label>
+           
+                <label>Phone:
+                <input
+                type="number"
+                name="phone"
+                value={inputs.phone || ""}
+                onChange={handleChange}   
+                />
+                </label>
 
-            <div className= {styles.inputfield}>
-                <body>Phone</body>
-                <input type='text'/>
-            </div>
+                <label>Password:
+                <input
+                type="password"
+                name="password"
+                value={inputs.password || ""}
+                onChange={handleChange}   
+                />
+                </label>
 
-            <div className= {styles.inputfield}>
-                <body>Password</body>
-                <input type='text'/>
-            </div>
+                <div className={styles.buttoncontainer}>
+                    <button type="submit"> Create </button>
+                </div>
+                
+            </form>
 
-            <button> Create </button>
+            
+            
 
         </div>
     )

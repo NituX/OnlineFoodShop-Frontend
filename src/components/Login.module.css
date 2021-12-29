@@ -1,5 +1,5 @@
 .container {
-    width: 300px;
+    width: 350px;
     
     margin: 20px;
     margin-left: auto;
@@ -7,41 +7,50 @@
 
     border: 1px solid var(--clr-primary);
     border-radius: 10px;
-    background-color: rgb(250, 250, 250);
-}
-
-.container body{
-    font-weight: bold;
-    color: var(--clr-secondary);
-    font-size: 30px;
+    background-color: var(--clr-backgr);
 }
 
 .inputfield {
-    display:flex;
-    justify-content: center;
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-.inputfield body {
-    text-align:left;
-    margin-left: auto;
-    width: 80px;
+.inputfield label {
+    display: flex;
+    width: 330px;
+    font-weight: bold;
+    color: var(--clr-primary2);
     font-size: 16px;
+    margin-left: 20px;
+    margin-top: 5px;
 }
 
 .inputfield input{
     width: 200px;
-    margin-right: auto;
+    margin-right: 20px;
+    margin-left: auto;
 }
 
-.container button {
+.buttoncontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.inputfield button {
     width: 130px;
     height: 40px;
     border-radius: 10px;
     margin: 5px;
+    border-color: var(--clr-secondary);
 
     font-size: 14px;
     font-weight: bold;
+    background-color: var(--clr-primaryexlight);
+    color: var(--clr-primary2);
+}
 
-    color: var(--clr-secondary);
+.container button:hover {
+    background-color: var(--clr-primarylight);
 }
