@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import Menu from './Menu.json';
 import Restaurants from './restaurants.json';
 import Header from './components/Header.js';
-import Login from './components/Login.js';
-import Register from './components/Register.js';
-import Restaurant from './components/Restaurant.js';
+import Login from './components/Login/Login.js';
+import Register from './components/Login/Register.js';
+import Restaurant from './components/Restaurant/Restaurant.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 
