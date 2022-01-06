@@ -2,12 +2,14 @@ import './App.css';
 import React, { useState } from 'react';
 import Menu from './Menu.json';
 import Restaurants from './restaurants.json';
+import Invoices from './invoices.json';
 import Header from './components/Header.js';
 import Login from './components/Login/Login.js';
 import Register from './components/Login/Register.js';
 import Restaurant from './components/Restaurant/Restaurant.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
+import CartView from './components/Cart/CartView';
 
 function App() {
 
@@ -24,6 +26,7 @@ function App() {
           <Route path=":restaurantId" element={ <Restaurant items={restaurants} /> } />
           <Route path="/login" element={ <Login/> } />
           <Route path="/register" element={<Register/>} />
+          <Route path= "/cart" element = {<CartView/>} />
         </Routes>
       </div>
     </BrowserRouter>

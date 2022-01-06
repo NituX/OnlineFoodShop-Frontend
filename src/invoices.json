@@ -1,0 +1,48 @@
+{
+    "items": [
+        {
+            "id": "1",
+            "restaurantName": "Kallen Kebab",
+            "purchaseDate": "3.1.2022",
+            "items": [
+                {
+                    "id": "1",
+                    "itemName": "Burgeri",
+                    "price": "20"
+                },
+                {
+                    "id": "2",
+                    "itemName": "Pizza",
+                    "price": "14"
+                },
+                {
+                    "id": "3",
+                    "itemName": "Burgeri",
+                    "price": "20"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "restaurantName": "Kallen Kebab",
+            "purchaseDate": "3.1.2022",
+            "items": [
+                {
+                    "id": "1",
+                    "itemName": "Burgeri",
+                    "price": "20"
+                },
+                {
+                    "id": "2",
+                    "itemName": "Pizza",
+                    "price": "14"
+                },
+                {
+                    "id": "3",
+                    "itemName": "Burgeri",
+                    "price": "20"
+                }
+            ]
+        }
+    ]
+}
