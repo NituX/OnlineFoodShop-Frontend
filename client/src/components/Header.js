@@ -14,8 +14,10 @@ export default function Header() {
                 <Link to = "login">
                     <h3> Login </h3>
                 </Link>
-                
-                <h3> Cart </h3>
+                <Link to = "cart">
+                Cart
+
+                </Link>
             </div>
         </nav>
     )
