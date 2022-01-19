@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
 import styles from './Home.module.css';
-import { Link } from 'react-router-dom';
-import RestaurantButton from './Restaurant/RestaurantButton';
 import RestaurantList from './Restaurant/RestaurantList';
 
-export default function (props) {
+export default function Home(props) {
 
     const [searchString, setSearhcString] = useState("");
 
-    const [filteredList] = useState();
+    //const [filteredList] = useState();
 
     const [items] = useState(props.items);
 
@@ -24,9 +22,6 @@ export default function (props) {
             <RestaurantList
                 items={items.filter((item) => item.restaurantName.toLowerCase().includes(searchString.toLowerCase()))}
             />
-            {/*<Link to="restaurant">
-                <button> Restaurant </button>
-    </Link>*/}
         </div>
     )
 }

@@ -12,10 +12,10 @@ export default function Login() {
         setInputs(values => ({ ...values, [name]: value }))
     }
 
-    const handleSubmit = (event) => {
+    /*const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputs);
-    }
+    }*/
 
     async function login(event) {
         event.preventDefault();
@@ -29,7 +29,11 @@ export default function Login() {
 
         const data = await response.json()
 
-        console.log(data)
+        if(data.user) {
+            alert('login successful')
+        } else {
+            alert('please check your username and password')
+        }
     }
 
     return (

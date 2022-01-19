@@ -11,10 +11,10 @@ export default function Login() {
         setInputs(values => ({ ...values, [name]: value }))
     }
 
-    const handleSubmit = (event) => {
-        //event.preventDefault();
-        //console.log(inputs);
-    }
+    /*const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(inputs);
+    }*/
 
     async function registerUser(event) {
         event.preventDefault();

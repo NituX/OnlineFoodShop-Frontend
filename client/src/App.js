@@ -2,7 +2,6 @@ import './App.css';
 import React, { useState } from 'react';
 import Menu from './Menu.json';
 import Restaurants from './restaurants.json';
-import Invoices from './invoices.json';
 import Header from './components/Header.js';
 import Login from './components/Login/Login.js';
 import Register from './components/Login/Register.js';

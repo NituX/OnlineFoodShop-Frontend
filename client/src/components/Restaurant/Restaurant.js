@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import MenuItem from './MenuItem';
 import MenuList from './MenuList';
 import styles from './Restaurant.module.css';
 
