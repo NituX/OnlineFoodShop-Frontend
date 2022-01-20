@@ -20,13 +20,14 @@ function App() {
 
   let authRoutes = 
   <>
-    <Route path="/login" element={ <Login login = {newJWT => {
-      setUserJWT(newJWT)
-      window.localStorage.setItem('userAuthData', newJWT)} }/> }/>
+    <Route path="/login" element={ <Login logIn = {newJWT => {
+      setUserJWT(newJWT);
+      window.localStorage.setItem('userAuthData', newJWT);
+      } }/> }/>
     <Route path="/register" element={<Register/>} />
   </>
 
-  if(userJWT != null) {
+  if(userJWT !== null) {
     authRoutes = 
     <>
       <Route path= "/cart" element = {<CartView/>} />
@@ -36,16 +37,19 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-      <Header loginStatus = {userJWT} />
+      <Header/>
         <Routes>
           <Route path="/" element={ <Home items={restaurants}/> } />
           <Route path="/restaurant" element={ <Restaurant items={items} /> } />
           <Route path=":restaurantId" element={ <Restaurant items={restaurants} /> } />          
           {authRoutes}
+          
         </Routes>
       </div>
     </BrowserRouter>
   );
 }
+
+//loginStatus = {userJWT}
 
 export default App;

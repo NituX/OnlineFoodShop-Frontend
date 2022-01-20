@@ -24,26 +24,22 @@ export default function Login(props) {
         try {
             const response = await axios.post(
                 Constants.API_ADDRESS + '/login',
-                /*
-                null,
-                auth: {
-                    email: inputs.email,
-                    password: inputs.password
-                }*/
-            {
-                email: inputs.email,
-                password: inputs.password
-            });
-
-            const recJWT = response.data.token;
-            props.login(recJWT)
-
+                null, {
+                    auth: {
+                        username: inputs.email,
+                        password: inputs.password
+                    }
+                }
+            );
             console.log(response);
 
-
-            setLoginState("successful")
+            const recJWT = response.data.token;
+            console.log(recJWT)
+            void
+            
             setTimeout(() => {
                 navigate('/', {replace: true});
+                props.logIn(recJWT)
             }, 1000);
             
         } catch (error) {
@@ -88,8 +84,7 @@ export default function Login(props) {
             loginUICtrl = <span> Login failed </span>
             break;
 
-        case "successful":
-            loginUICtrl = <span> Login Successful </span>
+        default:
             
             break;
     }
