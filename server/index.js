@@ -6,7 +6,7 @@ const User = require('./models/user.model')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
-const uri = 'mongodb+srv://Nitux:Nitu123@awaprojectgroup12.ejqpb.mongodb.net/awapfood?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://Nitux:Nitu123@awaprojectgroup12.ejqpb.mongodb.net/awapfood?retryWrites=true&w=majority'; //move to more secure place? .env?
 
 app.use(cors())
 app.use(express.json())
@@ -24,7 +24,8 @@ app.post('/api/register', async (req,res) => {
             name: req.body.cname,
             email: req.body.email,
             phone: req.body.phone,
-            password: hashPassword
+            password: hashPassword,
+            admin: false,
         })
         res.json({status: 'ok'})
     } catch (err) {
@@ -36,18 +37,24 @@ app.post('/api/register', async (req,res) => {
 app.post('/api/login', async (req,res) => {
         const user = await User.findOne({
             email: req.body.email,
-            password: req.body.password,
         })
 
         if (user) {
 
-            const token = jwt.sign({
+            if(bcrypt.compareSync(req.body.password, user.password) == true ) {
+                const token = jwt.sign({
                     name: req.body.cname,
                     email: req.body.email,
-            }, 'secret123') //move secret to more secure place
+            }, 'secret123') //move secret to more secure place. .env?
 
-            return res.json({status: 'ok', user: token})
+            return res.json({status: 'ok', token: token})
+            } else {
+                //console.log('wrong password')
+                res.json({status: 'error', user: false})
+            }
+            
         } else {
+            //console.log('user not found')
             res.json({ status: 'error', user: false})
         }
 })
