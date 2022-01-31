@@ -22,7 +22,7 @@ export default function Login() {
         setRegState("waiting")
 
         try {
-            const response = await axios.post(Constants.API_ADDRESS + '/register',
+            const response = await axios.post(Constants.API_ADDRESS + '/users/register',
             {
                 name: inputs.cname,
                 email: inputs.email,

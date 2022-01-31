@@ -2,22 +2,32 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
-const User = require('./models/user.model')
-const jwt = require('jsonwebtoken')
-const bcrypt = require('bcryptjs')
-const passport = require('passport');
-const BasicStrategy = require ('passport-http').BasicStrategy
-const JwtStrategy = require('passport-jwt').Strategy,
-ExtractJwt = require('passport-jwt').ExtractJwt;
+//const User = require('./models/user.model')
+//const jwt = require('jsonwebtoken')
+//const bcrypt = require('bcryptjs')
+//const passport = require('passport');
+//const BasicStrategy = require ('passport-http').BasicStrategy
+//const JwtStrategy = require('passport-jwt').Strategy,
+//ExtractJwt = require('passport-jwt').ExtractJwt;
 require ('dotenv').config()
+
+var userRouter = require('./routes/user.routes')
+var restaurantRouter = require('./routes/restaurant.routes')
+
 
 const uri = process.env.DB_URI
 const port = process.env.PORT
 
 app.use(cors())
 app.use(express.json())
+app.use('/api/users', userRouter)
+app.use('/api/restaurant', restaurantRouter)
 
 mongoose.connect(uri)
+
+//require('./routes/user.routes')(app);
+
+/*
 
 let jwtSecret = process.env.JWT_SECRET
 let options = {}
@@ -31,6 +41,7 @@ passport.use(new JwtStrategy(options, function(jwt_payload, done) {
 
 }))
 
+/*
 //register
 app.post('/api/register', async (req,res) => {
     console.log(req.body)
@@ -51,8 +62,9 @@ app.post('/api/register', async (req,res) => {
         console.log(err)
         res.json({ status: 'error', error: 'Duplicate email'})
     }
-})
+})*/
 
+/*
 //Login with passport + http-basic
 passport.use(new BasicStrategy(
     async function (username, password, done) {
@@ -79,8 +91,8 @@ passport.use(new BasicStrategy(
         
         
     }
-))
-
+))*/
+/*
 //login
 app.post('/api/login',
         passport.authenticate('basic', {session: false}),
@@ -125,8 +137,8 @@ app.post('/api/login',
         } else {
             //console.log('user not found')
             res.json({ status: 'error', user: false})
-        }*/
-})
+        }
+})*/
 
 app.listen(port, () => {
     console.log(`Server started on port port`)

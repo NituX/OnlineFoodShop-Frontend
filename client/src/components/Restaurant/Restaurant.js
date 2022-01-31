@@ -3,19 +3,23 @@ import { useParams } from 'react-router-dom';
 import MenuList from './MenuList';
 import styles from './Restaurant.module.css';
 
-export default function Restaurant(props) {
+export default function Restaurant({restaurants}) {
 
     const [searchString, setSearhcString] = useState("");
 
     const result = useParams();
     console.log(result);
 
-    const restaurant = props.items.find(item => item.id === result.restaurantId);
+    const currentRestaurant = restaurants.find(item => item._id.includes(result._id))
+
+    console.log(restaurants)
+    console.log(currentRestaurant);
+
 
     return (
         <div className={styles.container}>
             <div>
-                <h2> {restaurant.restaurantName} </h2>
+                <h2> {currentRestaurant.name} </h2>
             </div>
 
             <div className={styles.filter}>
@@ -24,9 +28,7 @@ export default function Restaurant(props) {
 
 
             <div className={styles.menulist}>
-                <MenuList
-                items = {restaurant.menu.filter((item) => item.itemName.toLowerCase().includes(searchString.toLowerCase()))}
-                />
+                <MenuList menu={currentRestaurant.menu}/>
             </div>
         </div>
     )

@@ -1,23 +1,38 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styles from './Header.module.css';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import {UserAuthContext} from '../Contexts'
 
 export default function Header() {
+
+    const userAuthCtxValue = useContext(UserAuthContext);
+    let navigate = useNavigate();
+
+    let loggedInRoutes = 
+        <>
+         <Link to="login"> Login </Link>
+        </>
+
+        if(userAuthCtxValue.jwt) {
+            loggedInRoutes=
+        <>
+        <Link to='/manager'> <button> Manager </button></Link>
+        <Link to = "cart"> <button> Cart </button> </Link>
+        <button onClick={() => {
+            userAuthCtxValue.logout()
+            window.location.reload(false)
+        } }> Logout </button>
+        </>            
+        }
+
     return (
-        
         <nav className = {styles.container}>
             <Link to="">
                 <h1 className = {styles.logo}> AWAFOOD </h1>
             </Link>
             
             <div className = {styles.navmenu}>
-                <Link to = "login">
-                    <h3> Login </h3>
-                </Link>
-                <Link to = "cart">
-                Cart
-
-                </Link>
+                {loggedInRoutes}
             </div>
         </nav>
     )

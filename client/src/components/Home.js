@@ -1,16 +1,13 @@
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+//import {Link, useNavigate} from 'react-router-dom'
 import styles from './Home.module.css';
 import RestaurantList from './Restaurant/RestaurantList';
+import Constants from '../Constants.json';
 
-export default function Home(props) {
+export default function Home({restaurants}) {
 
     const [searchString, setSearhcString] = useState("");
-
-    //const [filteredList] = useState();
-
-    const [items] = useState(props.items);
-
-
 
     return (
         <div className={styles.container}>
@@ -20,8 +17,10 @@ export default function Home(props) {
             </div>
 
             <RestaurantList
-                items={items.filter((item) => item.restaurantName.toLowerCase().includes(searchString.toLowerCase()))}
-            />
+             restaurants={restaurants.filter((item) => item.name.toLowerCase().includes(searchString.toLowerCase()))}
+             />
+            
+            
         </div>
     )
 }

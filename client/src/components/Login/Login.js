@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from './Login.module.css';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import Constants from '../../Constants.json'
+import { UserAuthContext } from '../../Contexts';
 
-export default function Login(props) {
+export default function Login() {
 
+    const UsrAuthCntxtValue = useContext(UserAuthContext)
     const navigate = useNavigate();
+    
     const [inputs, setInputs] = useState({});
     const [loginState, setLoginState] = useState("idle");
 
@@ -20,10 +23,9 @@ export default function Login(props) {
         event.preventDefault();
         setLoginState("waiting")
 
-        //with axios
         try {
             const response = await axios.post(
-                Constants.API_ADDRESS + '/login',
+                Constants.API_ADDRESS + '/users/login',
                 null, {
                     auth: {
                         username: inputs.email,
@@ -35,11 +37,11 @@ export default function Login(props) {
 
             const recJWT = response.data.token;
             console.log(recJWT)
-            void
             
             setTimeout(() => {
+                setLoginState("idle")
+                UsrAuthCntxtValue.login(recJWT);
                 navigate('/', {replace: true});
-                props.logIn(recJWT)
             }, 1000);
             
         } catch (error) {
@@ -49,24 +51,6 @@ export default function Login(props) {
                 setLoginState("idle")
             }, 2000);
         }
-
-        /*
-        //without axios
-        const response = await fetch('/login', { //url to somewhere else
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(inputs),
-        })
-
-        const data = await response.json()
-
-        if(data.user) {
-            alert('login successful')
-        } else {
-            alert('please check your username and password')
-        }*/
     }
 
     let loginUICtrl = null;

@@ -1,7 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styles from './MenuItem.module.css'
+import {UserAuthContext} from '../../Contexts'
 
 export default function Menu(props) {
+
+    const userAuthCtxValue = useContext(UserAuthContext);
+
+    let loggedInRoutes=<></>
+
+        if(userAuthCtxValue.jwt) {
+            loggedInRoutes=
+            <>
+            <button>Add to Cart</button>
+            </>
+        }
+    
+    
+    
 
     const [itemCount, setItemCount] = useState("1");
 
@@ -42,23 +57,7 @@ export default function Menu(props) {
             </div>
 
             <div className={styles.addToCart}>
-
-                <form className={styles.quantity}>
-                    <select value={itemCount} onChange={handleChange}>
-                        <option value="1"> 1 </option>
-                        <option value="2"> 2 </option>
-                        <option value="3"> 3 </option>
-                        <option value="4"> 4 </option>
-                    </select>
-                </form>
-
-                <button>
-                    Add to Cart
-                </button>
-
-
-
-
+                {loggedInRoutes}
             </div>
 
         </dl>
