@@ -10,7 +10,8 @@ import Register from './components/Login/Register.js';
 import Restaurant from './components/Restaurant/Restaurant.js';
 import Home from './components/Home';
 import CartView from './components/Cart/CartView';
-import { UserAuthContext } from './Contexts';
+import { UserAuthContext } from './Contexts/Contexts';
+import {CartContextProvider} from './Contexts/CartContexts'
 import ManagerDB from './components/manager/managerDB';
 import InfoForm from './components/manager/infoForm';
 import CreateMenuItem from './components/manager/CreateMenuItem';
@@ -20,11 +21,11 @@ const storedJWT = window.localStorage.getItem('userAuthData');
 
 function App() {
 
-  const [restaurants, setRestaurants] = useState([]);
-
   useEffect(() => {
     getRestaurants()
   }, []);
+
+  const [restaurants, setRestaurants] = useState([]);
 
   const getRestaurants = () => {
     axios.get(Constants.API_ADDRESS + '/restaurant')
@@ -61,13 +62,15 @@ function App() {
     <>
       <Route path="/login" element={<Login/>} />
       <Route path="/register" element={<Register />} />
+      <Route path='*' element={<Home/>} />
     </>
 
   if (userJWT.jwt) {
 
     authRoutes =
       <>
-        <Route path="/cart" element={<CartView />} />
+        <Route path='*' element={<Home/>} />
+        <Route path="/cart" element={<CartView/>} />
         <Route path="/manager" element={<ManagerDB restaurants={restaurants}/>} >
           <Route path=":_id" element={<InfoForm restaurants={restaurants}/>} />
           <Route path="new" element={<CreateRestaurant/>}/>
@@ -82,16 +85,18 @@ function App() {
   return (
     <UserAuthContext.Provider value={userJWT}>
       <BrowserRouter>
+      <CartContextProvider>
         <div className="App">
           <Header />
           <Routes>
             <Route path="/" element={<Home restaurants={restaurants} setRestaurants={setRestaurants}/>}/>
-            <Route path='*' element={<Home/>} />
+            
             <Route path="/restaurant/:_id" element={<Restaurant restaurants={restaurants}/>} />
             {authRoutes}
 
           </Routes>
         </div>
+        </CartContextProvider>
       </BrowserRouter>
     </UserAuthContext.Provider>
   );

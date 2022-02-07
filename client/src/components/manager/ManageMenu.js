@@ -19,11 +19,7 @@ export default function ManageMenu({restaurants}) {
       currentRestaurant.menu.map(i => <ManagerMenuItem key={i._id} {...i}/>)
       }
     </div>
-    <div>
     <Link to = 'add'> <button> Add Menu Item </button> </Link>
-    </div>
-    
-    <Outlet />
     </div>
   )
 }

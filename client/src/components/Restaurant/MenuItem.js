@@ -1,57 +1,54 @@
 import React, { useState, useContext } from 'react'
 import styles from './MenuItem.module.css'
-import {UserAuthContext} from '../../Contexts'
+import { UserAuthContext } from '../../Contexts/Contexts'
+import { CartContext } from '../../Contexts/CartContexts';
 
 export default function Menu(props) {
 
     const userAuthCtxValue = useContext(UserAuthContext);
+    const { onAdd } = useContext(CartContext);
+    const menuItem = props;
 
-    let loggedInRoutes=<></>
+    let loggedInRoutes = <></>
 
-        if(userAuthCtxValue.jwt) {
-            loggedInRoutes=
+    if (userAuthCtxValue.jwt) {
+        loggedInRoutes =
             <>
-            <button>Add to Cart</button>
+                <button onClick={() => handleAddToCart(menuItem)}>Add to Cart</button>
             </>
-        }
-    
-    
-    
+    }
 
-    const [itemCount, setItemCount] = useState("1");
-
-    const handleChange = (event) => {
-        setItemCount(event.target.value)
+    const handleAddToCart = (menuItem) => {
+        onAdd(menuItem)
     }
 
     return (
         <dl className={styles.container}>
 
-
-
-
-
             <div className={styles.image}>
-                asd
+
+            </div>
+
+            <div>
+                <dt>
+                    {
+                        menuItem.name
+                    }
+                </dt>
+
+                <dd>
+                    '{
+                        menuItem.description
+                    }'
+                </dd>
             </div>
 
 
 
-            <dt>
-                {
-                    props.itemName
-                }
-                <dd>
-                    '{
-                        props.description
-                    }'
-                </dd>
-            </dt>
 
-
-            <div className={styles.itemPrice}>
+            <div className={styles.price}>
                 {
-                    props.price
+                    menuItem.price
                 }
                 €
             </div>
@@ -61,7 +58,5 @@ export default function Menu(props) {
             </div>
 
         </dl>
-
-
     )
 }

@@ -3,7 +3,7 @@ import styles from './Login.module.css';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import Constants from '../../Constants.json'
-import { UserAuthContext } from '../../Contexts';
+import { UserAuthContext } from '../../Contexts/Contexts';
 
 export default function Login() {
 

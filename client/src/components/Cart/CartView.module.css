@@ -1,3 +1,12 @@
 .container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.empty {
+    margin-top: 21px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 15px;
 }

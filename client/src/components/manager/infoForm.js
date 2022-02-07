@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import {useParams, useNavigate, Link} from 'react-router-dom'
+import {useParams, useNavigate, Link, Outlet} from 'react-router-dom'
 import Constants from '../../Constants.json'
 
 export default function InfoForm({restaurants}) {
+
+  
 
   const navigate = useNavigate();
   const [restaurantInfo, setRestaurantInfo] = useState({});
@@ -17,7 +19,6 @@ export default function InfoForm({restaurants}) {
 
   useEffect(() => {
     handleReset();
-    console.log("useEffect")
   }, []);
   
   const params = useParams();
@@ -40,7 +41,7 @@ export default function InfoForm({restaurants}) {
         )
         console.log(restaurantInfo)
         handleReset()
-        navigate('/manager', {replace: true})
+        navigate('/manager/', {replace: true})
         window.location.reload();
       
     } catch (error) {
@@ -48,8 +49,22 @@ export default function InfoForm({restaurants}) {
     }
   }
 
-  return (
+  async function deleteRestaurant(event) {
+    event.preventDefault();
 
+    try {
+        await axios.delete(
+            Constants.API_ADDRESS + '/restaurant/' + params._id
+        )
+        navigate('/manager', {replace: true})
+        window.location.reload();
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+  return (
     <form onSubmit={submitForm}>
       <h4> Name:
         <input
@@ -132,11 +147,10 @@ export default function InfoForm({restaurants}) {
       </h4>
 
       <button type='submit'> Submit </button>
-
+      <button onClick={deleteRestaurant}> Delete </button>
       <Link to={'menu'}> <button> Menu </button> </Link>
 
     </form>
-
   )
 
 }

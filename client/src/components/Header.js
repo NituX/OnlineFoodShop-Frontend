@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import styles from './Header.module.css';
 import {Link, useNavigate} from 'react-router-dom';
-import {UserAuthContext} from '../Contexts'
+import {UserAuthContext} from '../Contexts/Contexts'
 
 export default function Header() {
 

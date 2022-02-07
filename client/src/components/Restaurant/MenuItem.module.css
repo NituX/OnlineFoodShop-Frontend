@@ -2,52 +2,50 @@
     display:flex;
     text-align: left;
     height: 100px;
-    width: 500px;
+    width: 800px;
     border: 1px solid var(--clr-primary);
     border-radius: 5px;
     margin: 10px;
-    justify-content: space-between;
 }
 
 .container dt {
-    width: 200px;
     color: var(--clr-secondary);
     font-weight: bold;
+    margin-left: 10px;
+    margin-right: 20px;
 }
 
 .container dd {
     font-weight: 500;
     font-style: italic;
     font-size: 14px;
-    margin-left: 15px;
+    margin-right: auto;
 }
 
-.itemPrice {
+.price {
     height: 50px;
     line-height: 50px;
     color: var(--clr-ora);
     font-weight: bold;
     font-size: 18px;
     margin-right: 20px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .container button {
-    margin-left: auto;
     height: 50px;
 }
 
 .addToCart {
     display: flex;
-    flex-direction: column;
+    margin-right: 10px;
     align-items: center;
 }
 
 .image {
     background-color: green;
-    float: left;
     width: 100px;
     height: 100px;
-}
-
-.quantity {
 }
