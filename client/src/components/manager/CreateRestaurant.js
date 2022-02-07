@@ -1,11 +1,11 @@
+import React, {useState, useEffect} from 'react';
+import Constants from '../../Constants.json';
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-import {useParams, useNavigate, Link} from 'react-router-dom'
-import Constants from '../../Constants.json'
+import {useNavigate, Link} from 'react-router-dom';
 
-export default function InfoForm({restaurants}) {
+export default function CreateRestaurant() {
 
-  const navigate = useNavigate();
+    const navigate = useNavigate();
   const [restaurantInfo, setRestaurantInfo] = useState({});
 
   const handleReset = () => {
@@ -19,9 +19,6 @@ export default function InfoForm({restaurants}) {
     handleReset();
     console.log("useEffect")
   }, []);
-  
-  const params = useParams();
-  const currentRestaurant = restaurants.find(i => i._id.includes(params._id))
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -34,8 +31,8 @@ export default function InfoForm({restaurants}) {
     event.preventDefault();
 
     try {
-      await axios.put(
-        Constants.API_ADDRESS + '/restaurant/' + currentRestaurant._id,
+      await axios.post(
+        Constants.API_ADDRESS + '/restaurant/',
         restaurantInfo
         )
         console.log(restaurantInfo)
@@ -48,14 +45,13 @@ export default function InfoForm({restaurants}) {
     }
   }
 
-  return (
-
-    <form onSubmit={submitForm}>
+  return( 
+  
+<form onSubmit={submitForm}>
       <h4> Name:
         <input
           type="text"
           name="name"
-          placeholder={currentRestaurant.name}
           value={restaurantInfo.name}
           onChange={handleChange}
         />
@@ -65,7 +61,6 @@ export default function InfoForm({restaurants}) {
         <input
           type="text"
           name="description"
-          placeholder={currentRestaurant.description}
           value={restaurantInfo.description}
           onChange={handleChange}
         />
@@ -75,7 +70,6 @@ export default function InfoForm({restaurants}) {
         <input
           type="text"
           name="pricelevel"
-          placeholder={currentRestaurant.pricelevel}
           value={restaurantInfo.pricelevel}
           onChange={handleChange}
         />
@@ -85,7 +79,6 @@ export default function InfoForm({restaurants}) {
         <input
           type="text"
           name="openingHours"
-          placeholder={currentRestaurant.openingHours}
           value={restaurantInfo.openingHours}
           onChange={handleChange}
         />
@@ -95,7 +88,6 @@ export default function InfoForm({restaurants}) {
         <input
           type="number"
           name="phone"
-          placeholder={currentRestaurant.phone}
           value={restaurantInfo.phone}
           onChange={handleChange}
         />
@@ -105,7 +97,6 @@ export default function InfoForm({restaurants}) {
         <input
           type="text"
           name="address"
-          placeholder={currentRestaurant.address}
           value={restaurantInfo.address}
           onChange={handleChange}
         />
@@ -115,7 +106,6 @@ export default function InfoForm({restaurants}) {
         <input
           type="text"
           name="city"
-          placeholder={currentRestaurant.city}
           value={restaurantInfo.city}
           onChange={handleChange}
         />
@@ -125,7 +115,6 @@ export default function InfoForm({restaurants}) {
         <input
           type="number"
           name="zipcode"
-          placeholder={currentRestaurant.zipcode}
           value={restaurantInfo.zipcode}
           onChange={handleChange}
         />
@@ -137,6 +126,6 @@ export default function InfoForm({restaurants}) {
 
     </form>
 
-  )
 
+  );
 }

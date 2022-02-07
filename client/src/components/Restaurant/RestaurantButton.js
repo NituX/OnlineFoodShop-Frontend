@@ -8,7 +8,18 @@ export default function RestaurantButton(props) {
     return (
         <Link to={"restaurant/" + props._id}>
             <button>
+                <h2>
                 {props.name}
+                </h2>
+                
+                <h3>
+                {props.description}
+                </h3>
+
+                <span>
+                {props.pricelevel}
+                </span>
+                
             </button>
         </Link>
         

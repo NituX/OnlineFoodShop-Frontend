@@ -4,7 +4,6 @@ import Constants from './Constants.json';
 import React, {useEffect, useState} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ManageMenu from './components/manager/ManageMenu.js';
-//import Restaurants from './restaurants.json';
 import Header from './components/Header.js';
 import Login from './components/Login/Login.js';
 import Register from './components/Login/Register.js';
@@ -14,6 +13,8 @@ import CartView from './components/Cart/CartView';
 import { UserAuthContext } from './Contexts';
 import ManagerDB from './components/manager/managerDB';
 import InfoForm from './components/manager/infoForm';
+import CreateMenuItem from './components/manager/CreateMenuItem';
+import CreateRestaurant from './components/manager/CreateRestaurant';
 
 const storedJWT = window.localStorage.getItem('userAuthData');
 
@@ -40,6 +41,7 @@ function App() {
   const initialAuthData = {
     jwt: storedJWT,
     login: (newValueForJwt) => {
+      console.log("login")
       const newAuthData = {
         ...userJWT,
         jwt: newValueForJwt
@@ -68,7 +70,9 @@ function App() {
         <Route path="/cart" element={<CartView />} />
         <Route path="/manager" element={<ManagerDB restaurants={restaurants}/>} >
           <Route path=":_id" element={<InfoForm restaurants={restaurants}/>} />
+          <Route path="new" element={<CreateRestaurant/>}/>
           <Route path=":_id/menu" element={<ManageMenu restaurants={restaurants}/>}/>
+          <Route path=":_id/menu/add" element={<CreateMenuItem/>}/>
         </Route>
       </>
   }

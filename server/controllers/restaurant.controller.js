@@ -10,6 +10,7 @@ exports.create = (async (req, res) => {
         await Restaurant.create({
             name: req.body.name,
             description: req.body.description,
+            pricelevel: req.body.pricelevel,
             openingHours: req.body.openingHours,
             email: req.body.email,
             phone: req.body.phone,
@@ -79,6 +80,7 @@ exports.update = (async (req, res) => {
             {
                 name: req.body.name,
                 description: req.body.description,
+                pricelevel: req.body.pricelevel,
                 openingHours: req.body.openingHours,
                 email: req.body.email,
                 phone: req.body.phone,

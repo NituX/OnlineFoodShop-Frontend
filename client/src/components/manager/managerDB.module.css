@@ -16,3 +16,14 @@
     display: block;
     border-bottom: 1px solid rgb(49, 49, 49);
 }
+
+.menuContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.menuItem {
+    background-color: aliceblue;
+}

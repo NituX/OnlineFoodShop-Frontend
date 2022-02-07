@@ -13,8 +13,9 @@ const Restaurant = new mongoose.Schema(
     {
     name: {type: String, required: true, unique: true},
     description: {type: String, required: true},
+    pricelevel: {type: String, required: true},
     openingHours: {type: String, required: true},
-    email: {type: String, required: true, unique: true},
+    email: {type: String, required: false, unique: true},
     phone: {type: String, required: true},
     address: {type: String, required: true},
     city: {type: String, required: true},

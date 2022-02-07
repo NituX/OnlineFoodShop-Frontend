@@ -8,7 +8,7 @@ export default function MenuList(props) {
     return (
         <div>
             {
-                    props.menu.map(item => <MenuItem className={styles.listItem} key={item.itemId} {...item} />)
+                    props.menu.map(item => <MenuItem className={styles.listItem} key={item._id} {...item} />)
             }
         </div>
     )

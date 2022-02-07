@@ -40,8 +40,8 @@ export default function Login() {
             
             setTimeout(() => {
                 setLoginState("idle")
-                UsrAuthCntxtValue.login(recJWT);
                 navigate('/', {replace: true});
+                UsrAuthCntxtValue.login(recJWT);
             }, 1000);
             
         } catch (error) {
