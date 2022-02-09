@@ -10,7 +10,7 @@ export default function Header() {
 
     let loggedInRoutes = 
         <>
-         <Link to="login"> Login </Link>
+         <Link to="login"> <button> Login </button></Link>
         </>
 
         if(userAuthCtxValue.jwt) {

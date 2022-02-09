@@ -4,7 +4,7 @@ import styles from './CartItem.module.css'
 
 const Cartitem = (props) => {
 
-    const {onAdd, onRemove} = useContext(CartContext)
+    const {cartItems, onAdd, onRemove} = useContext(CartContext)
 
     const handleRemove = (item) => {
         onRemove(item)
@@ -13,6 +13,8 @@ const Cartitem = (props) => {
     const handleAdd = (item) => {
         onAdd(item)
     }
+
+    const itemsTotalPrice = props.qty * props.price;
 
     return (
         <div className = {styles.container}>
@@ -23,6 +25,7 @@ const Cartitem = (props) => {
                 {props.qty} kpl
                 <button onClick={() => handleAdd(props)}> + </button>
                 </span>
+            <span className = {styles.totalPrice}> {itemsTotalPrice}€ </span>
         </div>
     );
 }

@@ -26,7 +26,7 @@
 
     font-weight: bold;
     width: 100px;
-    margin-right: 5px;
+    margin-right: 10px;
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -35,4 +35,11 @@
     width: 20px;
     height: 20px;
     border-radius: 5px;
+}
+
+.totalPrice {
+    width: 40px;
+    margin-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
 }

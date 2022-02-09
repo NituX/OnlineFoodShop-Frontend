@@ -9,6 +9,8 @@ const Cartview = () => {
     const { userJWT } = useContext(UserAuthContext)
     const { cartItems } = useContext(CartContext);
 
+    const totalPrice = cartItems.reduce((a, b) => a + b.qty * b.price, 0);
+
     return (
 
         <div className={styles.container}>
@@ -30,21 +32,13 @@ const Cartview = () => {
                     </div>
                 )}
             </div>
+            <div>
+                <h3>
+                    totalPrice: {totalPrice} €
+                </h3>
+            </div>
         </div>
     );
 }
 
 export default Cartview;
-
-/*
-<div>
-                {cartItems.length === 0 && <div> Cart is empty </div>}
-                
-
-                {cartItems.length !== 0 && (
-                    <div>
-                        {cartItems.map((item) => <CartItem key={item._id} {...item} />)}
-                    </div>
-                )}
-            </div>
-*/
